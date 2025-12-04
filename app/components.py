@@ -19,7 +19,8 @@ def render_sidebar_nav():
     return tags.section(
         ui.input_action_button("btn_fechar", "✕"), 
         tags.nav(tags.ul(
-            tags.li(ui.input_action_button("nav_home", "Painel Principal", class_="btn-nav-custom")), 
+            tags.li(ui.input_action_button("nav_home", "Painel Principal", class_="btn-nav-custom")),
+            tags.li(ui.input_action_button("nav_upload", "Upload de Dados", class_="btn-nav-custom")), 
             tags.li(ui.input_action_button("nav_inst", "Institucional", class_="btn-nav-custom")), 
             tags.li(ui.input_action_button("nav_cursos", "Cursos", class_="btn-nav-custom")), 
             tags.li(ui.input_action_button("nav_disc", "Disciplinas", class_="btn-nav-custom"))
@@ -97,6 +98,14 @@ def criar_filtro_disciplinas():
             tags.div(
                 tags.label("Disciplina", style="font-weight: 500; font-size: 12px;"),
                 ui.input_select("disc_disciplina", label=None, choices=[], width="100%"),
+                style="flex: 1;"
+            ),
+            style="display:flex; gap: 15px; width: 100%; margin-top: 10px;"
+        ),
+        tags.div(
+            tags.div(
+                tags.label("Modalidade", style="font-weight: 500; font-size: 12px;"),
+                ui.input_select("disc_modalidade", label=None, choices=[], width="100%"),
                 style="flex: 1;"
             ),
             style="display:flex; gap: 15px; width: 100%; margin-top: 10px;"
